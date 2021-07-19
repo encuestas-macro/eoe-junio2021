@@ -1,0 +1,184 @@
+---
+css: style_eoe.css
+pagetitle: "EOE junio 2021"
+output: html_document
+---
+
+```{r config, include=FALSE}
+library(dplyr)
+library(stringr)
+library(lubridate)
+library(dygraphs)
+library(kableExtra)
+library(formattable)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
+load(here::here("eoe", "outputs", "2021", "06. junio", "ws_junio_2021"))
+sparkline::sparkline(0)
+```
+
+<!-- Header del documento -->
+
+
+::: {.header}
+::: {.imagen}
+<img src="img/bcrd_squared.png" alt="drawing"/>
+:::
+
+::: {.title}
+<h2>
+Banco Central de la República Dominicana <br> 
+Encuesta de Opinión Empresarial
+</h2>
+
+Junio 2021
+:::
+:::
+
+<hr class="head-ruler">
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+### Moderación en la situación económica del sector industrial
+
+::: {.first-container}
+::: {.left}
+
+El indicador sobre la situación económica muestra una desaceleración en en el mes de junio, interrumpiendo la tendencia positiva que había iniciado en marzo. Aún con esta reducción el saldo de opinión se mantiene positivo (34.4), con una considerable proporción de empresas indicando que su situación económica mejoró (43.8) o se mantuvo igual (46.8).
+
+Por otro lado, el indicador sobre el nivel de inventario marcó una variación negativa de 4.5 puntos, para un saldo de 6.8 que representa un aumento en las existencias del sector.
+:::
+
+::: {.right}
+#### Situación económica del mes actual
+
+```{r, fig.height=3, fig.width=5}
+dyg_sit_econ
+```
+:::
+:::
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+### Notable contracción de la producción y los pedidos
+
+------------------------------------------------------------------------
+
+::: {.second-container}
+::: {.left}
+
+En comparación con el mes anterior, las principales variables del sector mostraron una evolución desfavorable. Los pedidos destacan en este sentido, con un saldo de opinión de -21.8, el más bajo en lo que va de año.
+
+En coherencia con la evolución de los pedidos, el nivel de producción de las empresas se redujo en junio, con un balance de -12.5 que representa una reducción de 26.3 puntos respecto al mes anterior.
+
+Esta situación desfavorable se extiende también al indicador de empleo, el cuál, con un saldo de -6.3, revirtió la tenue recuperación registrada en mayo de 2021.
+
+<!-- 
+La evolución de la producción coincide con la evolución de los pedidos, 
+
+El nivel de producción de las empresas evolucionó de manera similar, el ajuste de la producción coincide con la reducción de los pedidos, con un balance de -12.5. 
+
+En junio el saldo que resume los niveles de producción se colocó en -12.5, para una contracción de 26.3 puntos respecto a mayo (13.8).
+
+Del mismo modo, el indicador sobre el nivel de pedidos se redujo, retornando nuevamente a terreno negativo con un saldo que se destaca por ser el más bajo en lo que va de año (-21.9). 
+
+
+alcanzando esta vez valores positivos tras seis meses con saldos por debajo de 0.0. En la medición correspondiente a mayo, el saldo para este indicador fue de 25.0, con 46.4% de las empresas indicando que su nivel de pedidos fue mayor.
+-->
+
+:::
+
+::: {.right}
+#### Producción y pedidos respecto al mes anterior
+
+```{r, fig.height=3, fig.width=5}
+dyg_produccion_pedidos
+```
+:::
+:::
+
+<!-- ----------------------------------------------------------------------------- -->
+
+### Las expectativas se mantienen favorables
+
+------------------------------------------------------------------------
+
+::: {.third-container}
+::: {.left .first}
+
+En el mes de junio las expectativas para las distintas variables del sector industrial mostraron resultados positivos, pero inferiores respecto a los observados el mes anterior, revelando una postura más conservadora del empresariado de cara a los próximos meses.
+
+En este sentido, el saldo que resume las expectativas sobre la situación económica de los próximos seis meses registró un saldo de 56.3, para una variación negativa respecto a mayo (58.6).
+:::
+
+::: {.right .first}
+#### Expectativas situación económica (próximos 6 meses)
+
+```{r, fig.height=3, fig.width=5}
+dyg_sit_econ_exp
+```
+:::
+
+::: {.left .secondl}
+
+Los empresarios del sector también revisaron a la baja sus expectativas para la producción y el empleo. Este último se redujo notablemente, al punto que marcó niveles negativos por primera vez desde el año anterior.
+
+En el caso de la producción, si bien el saldo de las expectativas fue inferior, el resultado se mantuvo en terreno positivo (40.6).
+
+:::
+
+::: {.right .second}
+#### Expectativas de producción y empleo
+
+```{r, , fig.height=3, fig.width=5}
+dyg_empleo_produccion_exp
+```
+:::
+:::
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+### Confianza industrial y clima empresarial
+
+------------------------------------------------------------------------
+
+::: {.fourth-container}
+::: {.left .first}
+
+El Índice de Confianza Industrial (ICI) resume la actividad actual y las expectativas de actividad futura de las empresas del sector manufacturero en base a variables observables de las empresas. Este indicador mostró una ligera reducción en junio, para un resultado de 52.1. La evolución del indicador se explica principalmente por la reducción de la producción y los pedidos.
+
+:::
+
+::: {.right .first}
+#### Indicador de Confianza Industrial
+
+```{r, fig.height=3, fig.width=5}
+dyg_ici
+```
+:::
+
+::: {.left .secondl}
+
+Asimismo, la percepción que tienen los empresarios del sector acerca de la situación económica actual y futura de sus empresas se sintetiza a través del Indicador de Clima Empresarial (ICE). En este sondeo el indicador se reduce por primera vez últimos 3 meses, con un resultado de 45.7.
+
+:::
+
+::: {.right .second}
+#### Indicador de Clima Empresarial
+
+```{r, fig.height=3, fig.width=5}
+dyg_ice
+```
+:::
+:::
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+::: {.cuadro-resumen}
+### Cuadro resumen
+
+------------------------------------------------------------------------
+
+```{r}
+tabla_resumen
+```
+:::
