@@ -144,7 +144,7 @@ dyg_empleo_produccion_exp
 ::: {.fourth-container}
 ::: {.left .first}
 
-El Índice de Confianza Industrial (ICI) resume la actividad actual y las expectativas de actividad futura de las empresas del sector manufacturero en base a variables observables de las empresas. Este indicador mostró una ligera reducción en junio, para un resultado de 52.1. La evolución del indicador se explica principalmente por la reducción de la producción y los pedidos.
+El Índice de Confianza Industrial (ICI) resume la actividad actual y las expectativas de actividad futura de las empresas del sector manufacturero en base a variables observables de las empresas. Este indicador mostró una reducción en junio, para un resultado de 52.1. La evolución del indicador se explica principalmente por la reducción de la producción y los pedidos.
 
 :::
 
