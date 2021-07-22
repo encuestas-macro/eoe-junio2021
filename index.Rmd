@@ -43,7 +43,7 @@ Junio 2021
 ::: {.first-container}
 ::: {.left}
 
-El indicador sobre la situación económica muestra una desaceleración en en el mes de junio, interrumpiendo la tendencia positiva que había iniciado en marzo. Aún con esta reducción el saldo de opinión se mantiene positivo (34.4), con una considerable proporción de empresas indicando que su situación económica mejoró (43.8) o se mantuvo igual (46.8).
+El indicador sobre la situación económica muestra una desaceleración en en el mes de junio, interrumpiendo la tendencia positiva que había iniciado en marzo. Aún con esta reducción, el saldo de opinión se mantiene positivo (34.4), con una considerable proporción de empresas indicando que su situación económica mejoró (43.8) o se mantuvo igual (46.8).
 
 Por otro lado, el indicador sobre el nivel de inventario marcó una variación negativa de 4.5 puntos, para un saldo de 6.8 que representa un aumento en las existencias del sector.
 :::
@@ -52,7 +52,7 @@ Por otro lado, el indicador sobre el nivel de inventario marcó una variación n
 #### Situación económica del mes actual
 
 ```{r, fig.height=3, fig.width=5}
-dyg_sit_econ
+dyg_sit_econ |> dygraphs::dyLimit(limit = 0, color = 'gray')
 ```
 :::
 :::
@@ -70,7 +70,7 @@ En comparación con el mes anterior, las principales variables del sector mostra
 
 En coherencia con la evolución de los pedidos, el nivel de producción de las empresas se redujo en junio, con un balance de -12.5 que representa una reducción de 26.3 puntos respecto al mes anterior.
 
-Esta situación desfavorable se extiende también al indicador de empleo, el cuál, con un saldo de -6.3, revirtió la tenue recuperación registrada en mayo de 2021.
+Esta situación desfavorable se extiende también al indicador de empleo, el cual, con un saldo de -6.3, revirtió la leve recuperación registrada en mayo de 2021.
 
 <!-- 
 La evolución de la producción coincide con la evolución de los pedidos, 
@@ -91,7 +91,7 @@ alcanzando esta vez valores positivos tras seis meses con saldos por debajo de 0
 #### Producción y pedidos respecto al mes anterior
 
 ```{r, fig.height=3, fig.width=5}
-dyg_produccion_pedidos
+dyg_produccion_pedidos |> dygraphs::dyLimit(limit = 0, color = 'gray')
 ```
 :::
 :::
@@ -114,7 +114,7 @@ En este sentido, el saldo que resume las expectativas sobre la situación econó
 #### Expectativas situación económica (próximos 6 meses)
 
 ```{r, fig.height=3, fig.width=5}
-dyg_sit_econ_exp
+dyg_sit_econ_exp |> dygraphs::dyLimit(limit = 0, color = 'gray')
 ```
 :::
 
@@ -130,7 +130,7 @@ En el caso de la producción, si bien el saldo de las expectativas fue inferior,
 #### Expectativas de producción y empleo
 
 ```{r, , fig.height=3, fig.width=5}
-dyg_empleo_produccion_exp
+dyg_empleo_produccion_exp |> dygraphs::dyLimit(limit = 0, color = 'gray')
 ```
 :::
 :::
@@ -152,7 +152,7 @@ El Índice de Confianza Industrial (ICI) resume la actividad actual y las expect
 #### Indicador de Confianza Industrial
 
 ```{r, fig.height=3, fig.width=5}
-dyg_ici
+dyg_ici 
 ```
 :::
 
